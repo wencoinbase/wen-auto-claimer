@@ -1,30 +1,36 @@
-WEN Auto Claimer Bot 🤖
+# WEN Auto Claimer Bot 🤖
 
-An automated on-chain claiming bot for the Base network.
+A production-ready automation bot for the Base network.
 
-This tool interacts directly with public smart contracts to claim vested tokens, airdrops, and other claimable rewards and forwards them to the beneficiary address automatically.
+This tool executes permissionless (“anyone-can-call”) smart contract methods to claim vested tokens, airdrops, and other claimable rewards on a schedule. When used with public vesting/claim contracts, tokens are delivered to the beneficiary address defined by the contract — not the bot wallet.
 
-Uses public “anyone-can-call” contract logic. Funds always go to the rightful beneficiary. No custody. No risk to users.
+> Non-custodial by design. The bot only pays gas and triggers public claim functions.
 
-⚡ Features
+---
 
-Automated claiming at configurable intervals
+## Features
 
-Fully non-custodial
+- Automated execution at a configurable interval
+- Non-custodial (gas sponsor wallet only)
+- 100% on-chain interactions (no UI automation)
+- Supports common claim patterns:
+  - Vesting claim contracts (`claim`, `release`, `withdraw`)
+  - Airdrop claim contracts
+  - Any permissionless public method on Base (extendable)
 
-100% on-chain execution
+---
 
-Gas-efficient transactions
+## Requirements
 
-Supports:
+- Node.js 18+ recommended
+- A Base RPC endpoint (Alchemy / QuickNode / etc.)
+- A dedicated bot wallet with a small ETH balance for gas
 
-Public vesting contracts
+---
 
-Airdrop claim contracts
+## Setup
 
-Any public smart contract method on Base that can be called permissionlessly
-
-## 🛠 Setup
+### 1) Install dependencies
 
 ```bash
 git clone https://github.com/wencoinbase/wen-auto-claimer
