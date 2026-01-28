@@ -1,0 +1,14 @@
+{
+  "name": "wen-auto-claimer",
+  "version": "1.0.0",
+  "description": "Automated on-chain claimer bot for Base (vesting + airdrops + permissionless calls).",
+  "main": "claimer.js",
+  "type": "module",
+  "scripts": {
+    "start": "node claimer.js"
+  },
+  "dependencies": {
+    "dotenv": "^16.4.5",
+    "ethers": "^6.13.2"
+  }
+}
